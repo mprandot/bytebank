@@ -25,7 +25,7 @@ class FormularioTransferencia extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Input(controlador: _controladorCampoNumeroConta, dica: '0000', rotulo: 'Número da conta'),
-            Input(controlador: _controladorCampoNumeroConta, dica: '0.00', rotulo: 'Valor', icone: Icons.monetization_on),
+            Input(controlador: _controladorCampoValor, dica: '0.00', rotulo: 'Valor', icone: Icons.monetization_on),
             RaisedButton(
               child: Text('Confirmar'),
               onPressed: () => _criaTransferencia(),
