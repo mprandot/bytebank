@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import './Transferencia.dart';
 import './Input.dart';
 
-class FormularioTransferencia extends StatelessWidget {
+class FormularioTransferencia extends StatefulWidget {
+  @override
+  State createState() {
+    return FormularioTransferenciaState();
+  }
+
+}
+
+class FormularioTransferenciaState extends State<FormularioTransferencia> {
+
   final TextEditingController _controladorCampoNumeroConta = TextEditingController();
   final TextEditingController _controladorCampoValor = TextEditingController();
 
@@ -23,15 +32,17 @@ class FormularioTransferencia extends StatelessWidget {
         appBar: AppBar(
           title: Text('Criando Transferência'),
         ),
-        body: Column(
-          children: <Widget>[
-            Input(controlador: _controladorCampoNumeroConta, dica: '0000', rotulo: 'Número da conta'),
-            Input(controlador: _controladorCampoValor, dica: '0.00', rotulo: 'Valor', icone: Icons.monetization_on),
-            RaisedButton(
-              child: Text('Confirmar'),
-              onPressed: () => _criaTransferencia(context),
-            )
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Input(controlador: _controladorCampoNumeroConta, dica: '0000', rotulo: 'Número da conta'),
+              Input(controlador: _controladorCampoValor, dica: '0.00', rotulo: 'Valor', icone: Icons.monetization_on),
+              RaisedButton(
+                child: Text('Confirmar'),
+                onPressed: () => _criaTransferencia(context),
+              )
+            ],
+          ),
         ));
   }
 }

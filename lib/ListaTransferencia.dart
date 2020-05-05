@@ -13,7 +13,11 @@ class ListaTransferencias extends StatefulWidget {
 class ListaTransferenciaState extends State<ListaTransferencias>{
 
   void addTransferencia (transferencia) {
-    widget._transferencias.add(transferencia);
+    if(transferencia != null) {
+      setState(() {
+        widget._transferencias.add(transferencia);
+      });
+    }
   }
 
   @override
