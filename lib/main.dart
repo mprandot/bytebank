@@ -1,6 +1,5 @@
+import 'package:bytebank/ListaTransferencia.dart';
 import 'package:flutter/material.dart';
-import './Transferencia.dart';
-import './FormularioTransferencia.dart';
 
 void main() => runApp(BytebankApp());
 
@@ -9,7 +8,7 @@ class BytebankApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: FormularioTransferencia(),
+        body: ListaTransferencias(),
       ),
     );
   }
